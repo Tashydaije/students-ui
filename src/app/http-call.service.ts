@@ -11,20 +11,15 @@ export class HttpCallService {
   saveStudent(payload) {
     console.log(payload);
 
-    this.Http.post('http://localhost:5000/createUsers',
+    return this.Http.post('http://localhost:5000/createUsers',
       payload)
       .subscribe(
         data  => {
           console.log('POST Request is successful ', data);
         },
         error  => {
-
           console.log('POST Request is Error', error);
-
         }
-
-      );
-
+        );
   }
-
 }
